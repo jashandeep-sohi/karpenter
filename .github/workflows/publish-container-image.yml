@@ -23,4 +23,6 @@ jobs:
         env:
           SNAPSHOT_TAG: ${{ github.ref_name }}
           KO_DOCKER_REPO: ${{ github.repository }}
-        run: make build
+        run: >
+          make toolchain
+          make build
