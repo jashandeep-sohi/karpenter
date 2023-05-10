@@ -6,13 +6,28 @@ on:
     types:
       - published
 
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
 jobs:
   build:
-    runs-on: ubuntu-latest
     name: publish-container-image
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        
+      - name: Log in to the Container registry
+        uses: docker/login-action@v2
+        with:
+          registry: ${{ env.REGISTRY }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
         
       - name: Set up Go
         uses: actions/setup-go@v4
@@ -22,5 +37,5 @@ jobs:
       - name: Build
         env:
           SNAPSHOT_TAG: ${{ github.ref_name }}
-          KO_DOCKER_REPO: ${{ github.repository }}
+          KO_DOCKER_REPO:  ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
         run: make toolchain tidy build
