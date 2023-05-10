@@ -29,7 +29,8 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
         
-      - uses: ./.github/actions/install-go-and-dependencies
+      - name: Setup Go
+        uses: ./.github/actions/install-go-and-dependencies
           
       - name: Build
         env:
