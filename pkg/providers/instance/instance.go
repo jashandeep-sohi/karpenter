@@ -247,7 +247,7 @@ func (p *Provider) launchInstance(ctx context.Context, nodeTemplate *v1alpha1.AW
 		},
 	}
 	if capacityType == v1alpha5.CapacityTypeSpot {
-		createFleetInput.SpotOptions = &ec2.SpotOptionsRequest{AllocationStrategy: aws.String(ec2.SpotAllocationStrategyPriceCapacityOptimized)}
+		createFleetInput.SpotOptions = &ec2.SpotOptionsRequest{AllocationStrategy: aws.String(ec2.SpotAllocationStrategyLowestPrice)}
 	} else {
 		createFleetInput.OnDemandOptions = &ec2.OnDemandOptionsRequest{AllocationStrategy: aws.String(ec2.FleetOnDemandAllocationStrategyLowestPrice)}
 	}
