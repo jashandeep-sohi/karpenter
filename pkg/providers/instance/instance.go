@@ -19,6 +19,7 @@ import (
 	"errors"
 	"fmt"
 	"math"
+	"os"
 	"sort"
 	"time"
 
@@ -247,7 +248,23 @@ func (p *Provider) launchInstance(ctx context.Context, nodeTemplate *v1alpha1.AW
 		},
 	}
 	if capacityType == v1alpha5.CapacityTypeSpot {
-		createFleetInput.SpotOptions = &ec2.SpotOptionsRequest{AllocationStrategy: aws.String(ec2.SpotAllocationStrategyPriceCapacityOptimized)}
+		var spotAllocationStrategy string
+		switch os.Getenv("SPOT_ALLOCATION_STRATEGY") {
+
+		case ec2.SpotAllocationStrategyLowestPrice:
+			spotAllocationStrategy = ec2.SpotAllocationStrategyLowestPrice
+
+		case ec2.SpotAllocationStrategyCapacityOptimized:
+			spotAllocationStrategy = ec2.SpotAllocationStrategyCapacityOptimized
+
+		case ec2.SpotAllocationStrategyPriceCapacityOptimized:
+			spotAllocationStrategy = ec2.SpotAllocationStrategyPriceCapacityOptimized
+
+		default:
+			spotAllocationStrategy = ec2.SpotAllocationStrategyPriceCapacityOptimized
+		}
+
+		createFleetInput.SpotOptions = &ec2.SpotOptionsRequest{AllocationStrategy: aws.String(spotAllocationStrategy)}
 	} else {
 		createFleetInput.OnDemandOptions = &ec2.OnDemandOptionsRequest{AllocationStrategy: aws.String(ec2.FleetOnDemandAllocationStrategyLowestPrice)}
 	}
