@@ -261,8 +261,8 @@ github.com/ianlancetaylor/demangle v0.0.0-20181102032728-5e5cf60278f6/go.mod h1:
 github.com/ianlancetaylor/demangle v0.0.0-20200824232613-28f6c0f3b639/go.mod h1:aSSvb/t6k1mPoxDqO4vJh6VOCGPwU4O0C2/Eqndh1Sc=
 github.com/imdario/mergo v0.3.15 h1:M8XP7IuFNsqUx6VPK2P9OSmsYsI/YFaGil0uD21V3dM=
 github.com/imdario/mergo v0.3.15/go.mod h1:WBLT9ZmE3lPoWsEzCh9LPo3TiwVN+ZKEjmz+hD27ysY=
-github.com/jashandeep-sohi/karpenter-core v0.0.0-20230606083332-95ffb4d47455 h1:CVYfc0+iwz0XQ6+3p1x/Sc26SadRnjI+t5iyao4JA6E=
-github.com/jashandeep-sohi/karpenter-core v0.0.0-20230606083332-95ffb4d47455/go.mod h1:NQOEY9xxhPi6xUTknEA0KaY9pPbXzS5N4EKkZ5f85d8=
+github.com/jashandeep-sohi/karpenter-core v0.0.0-20230609004658-b6ece6f47d93 h1:A4dafi1ZF/lQvWOZoQuuFq36WwP83O8kwqSZ7zrE8nQ=
+github.com/jashandeep-sohi/karpenter-core v0.0.0-20230609004658-b6ece6f47d93/go.mod h1:NQOEY9xxhPi6xUTknEA0KaY9pPbXzS5N4EKkZ5f85d8=
 github.com/jessevdk/go-flags v1.4.0/go.mod h1:4FA24M0QyGHXBuZZK/XkWh8h0e1EYbRYJSGM75WSRxI=
 github.com/jmespath/go-jmespath v0.4.0 h1:BEgLn5cpjn8UN1mAw4NjwDrS35OdebyEtFe+9YPoQUg=
 github.com/jmespath/go-jmespath v0.4.0/go.mod h1:T8mJZnbsbmF+m6zOOFylbeCJqk5+pHWvzYPziyZiYoo=
