@@ -114,4 +114,4 @@ require (
 	sigs.k8s.io/yaml v1.3.0 // indirect
 )
 
-replace github.com/aws/karpenter-core => github.com/jashandeep-sohi/karpenter-core v0.0.0-20230616071327-86586757a044
+replace github.com/aws/karpenter-core => github.com/jashandeep-sohi/karpenter-core v0.0.0-20230616082818-f5826a7f86de
